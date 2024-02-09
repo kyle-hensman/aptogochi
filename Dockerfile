@@ -26,8 +26,8 @@ COPY --from=builder /app/public ./public
 
 CMD npm start
 
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install 
-COPY . .
-CMD npm run dev
+# FROM base as dev
+# ENV NODE_ENV=development
+# RUN npm install 
+# COPY . .
+# CMD npm run dev
