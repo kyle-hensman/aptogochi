@@ -53,6 +53,8 @@ const WalletView = (wallet: Wallet) => {
     }
   };
 
+  const onGetAWallet = async () => {};
+
   /**
    * If we are on a mobile browser, adapter checks whether a wallet has a `deeplinkProvider` property
    * a. If it does, on connect it should redirect the user to the app by using the wallet's deeplink url
@@ -91,14 +93,23 @@ const WalletView = (wallet: Wallet) => {
     // we are on desktop view
     return (
       <Menu as='div' className='relative inline-block text-left'>
-        <div>
+        {!isWalletReady && !account ? (
+          <a
+            type='button'
+            className='nes-btn is-primary nes-pointer'
+            href='https://petra.app'
+            target='_blank'
+          >
+            Get A Wallet
+          </a>
+        ) : (
           <Menu.Button
             onClick={() =>
               connected
                 ? setIsOpen(!isOpen)
                 : onWalletConnectRequest(PetraWalletName)
             }
-            className={`nes-btn is-primary  ${
+            className={`nes-btn is-primary ${
               isWalletReady
                 ? 'hover:bg-blue-700'
                 : 'opacity-50 cursor-not-allowed'
@@ -107,7 +118,7 @@ const WalletView = (wallet: Wallet) => {
             {isWalletReady && !account && 'Connect Wallet'}
             {account && shortenWalletAddress(account.address)}
           </Menu.Button>
-        </div>
+        )}
 
         {connected && (
           <Transition

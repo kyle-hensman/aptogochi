@@ -16,22 +16,23 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   {
-    key: "Access-Control-Allow-Headers",
-    value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, x-aptos-client",
+    key: 'Access-Control-Allow-Headers',
+    value:
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, x-aptos-client',
   },
-
 ];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders,
+  //     },
+  //   ];
+  // },
+  output: 'export',
 };
 
 export default nextConfig;
