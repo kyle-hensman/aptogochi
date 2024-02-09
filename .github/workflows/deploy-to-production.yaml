@@ -19,8 +19,6 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           project_id: '${{ secrets.CLOUD_RUN_PROJECT_NAME }}'
-          service_account_key: '${{ secrets.CLOUD_RUN_SERVICE_ACCOUNT }}'
-          export_default_credentials: true
 
       - name: 'Build and push Docker image'
         run: |
