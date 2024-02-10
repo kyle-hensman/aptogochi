@@ -5,8 +5,8 @@ import { PetParts } from '@/app/home/Pet';
 import { PetAction } from './Actions';
 
 export interface PetImageProps {
-  selectedAction: PetAction;
-  energyPoints: number;
+  selectedAction?: PetAction;
+  energyPoints?: number;
   petParts: PetParts;
   avatarStyle?: boolean;
 }
@@ -22,7 +22,7 @@ export function PetImage(props: PetImageProps) {
   const imgClass = 'absolute top-0 left-0 w-full h-full object-contain';
 
   const animation =
-    energyPoints <= 4
+    energyPoints && energyPoints <= 4
       ? 'animate-pulse'
       : selectedAction == 'play'
         ? 'animate-wiggle'
