@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { PropsWithChildren, SetStateAction, useState } from 'react';
 
-import { Body } from './home/Body';
+import { Leaderboard } from '../home/Leaderboard';
 import Link from 'next/link';
 
 const FixedSizeWrapper = ({ children }: PropsWithChildren) => {
@@ -28,12 +28,12 @@ const FixedSizeWrapper = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <main className='flex flex-col'>
       <FixedSizeWrapper>
         <Header />
-        <Body />
+        <Leaderboard />
       </FixedSizeWrapper>
     </main>
   );
@@ -44,8 +44,8 @@ function Header() {
     <div className='sticky top-0 z-10 flex justify-between items-center px-6 py-4 bg-gradient-to-r from-orange-300 via-orange-400 to-red-400 shadow-md w-full gap-2'>
       <h1 className='text-2xl'>Aptogotchi</h1>
       <div className='flex justify-between items-center gap-6'>
-        <Link href={'/leaderboard'} type='button' className='nes-btn'>
-          Leaderboard
+        <Link href={'/'} className='nes-btn'>
+          Go Back Home
         </Link>
         <ConnectToWallet />
       </div>

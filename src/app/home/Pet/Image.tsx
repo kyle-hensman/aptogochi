@@ -2,16 +2,18 @@
 'use client';
 
 import { PetParts } from '@/app/home/Pet';
-import { PetAction } from '@/app/home/Pet/Actions';
+import { PetAction } from './Actions';
 
 export interface PetImageProps {
-  selectedAction?: PetAction;
+  selectedAction: PetAction;
+  energyPoints: number;
   petParts: PetParts;
   avatarStyle?: boolean;
 }
 
 export function PetImage(props: PetImageProps) {
-  const { avatarStyle, petParts, selectedAction } = props;
+  const { avatarStyle, petParts, selectedAction, energyPoints } = props;
+
   const head = BASE_PATH + 'head.png';
   const body = BASE_PATH + bodies[petParts.body];
   const ear = BASE_PATH + ears[petParts.ear];
@@ -20,7 +22,11 @@ export function PetImage(props: PetImageProps) {
   const imgClass = 'absolute top-0 left-0 w-full h-full object-contain';
 
   const animation =
-    selectedAction === 'play' ? 'animate-wiggle' : 'animate-hop';
+    energyPoints <= 4
+      ? 'animate-pulse'
+      : selectedAction == 'play'
+        ? 'animate-wiggle'
+        : 'animate-hop';
 
   return (
     <div
@@ -33,7 +39,12 @@ export function PetImage(props: PetImageProps) {
         <img src={head} className={imgClass} alt='pet head' />
         <img src={body} className={imgClass} alt='pet body' />
         <img src={ear} className={imgClass} alt='pet ears' />
-        <img src={face} className={imgClass} alt='pet face' />
+        <img
+          src={face}
+          // className={imgClass + ' animate-hop ease-in-out'}
+          className={imgClass}
+          alt='pet face'
+        />
       </div>
     </div>
   );

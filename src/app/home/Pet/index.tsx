@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Actions, PetAction } from './Actions';
 
 import { AptogotchiCollection } from '@/components/AptogotchiCollection';
@@ -46,6 +46,7 @@ export function Pet({ pet, setPet }: PetProps) {
         <div className='flex flex-col gap-4 w-[320px]'>
           <PetImage
             selectedAction={selectedAction}
+            energyPoints={pet.energy_points}
             petParts={pet.parts}
             avatarStyle
           />
