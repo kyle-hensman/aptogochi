@@ -68,20 +68,20 @@ export function Leaderboard() {
 
   useEffect(() => {
     fetchPlayers();
-  }, [fetchPlayers]);
+  }, [players, fetchPlayers]);
 
   return (
     <div className='flex flex-col gap-3 p-3'>
       <h1>Leaderboards</h1>
-      <div className='p-4 bg-green-500 rounded overflow-scroll h-[55vh]'>
-        {!loading && !players ? (
-          <div className='flex justify-center items-center h-[55vh]'>
+      <div className='p-4 bg-green-500 rounded overflow-scroll h-[500px]'>
+        {loading ? (
+          <div className='flex justify-center items-center h-full'>
             <h2 className='text-2xl text-white animate-pulse'>Loading...</h2>
           </div>
         ) : (
           players &&
           players.length > 0 && (
-            <div className='table'>
+            <div className=''>
               <div className='nes-table-responsive'>
                 <table className='nes-table is-bordered is-dark'>
                   <thead>

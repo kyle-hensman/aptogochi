@@ -61,9 +61,9 @@ export function useGetAptogotchiCollectionOwners() {
       );
 
       setOwners(foundOwners);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching Aptogotchi owners:', error);
-    } finally {
       setLoading(false);
     }
   }, []);
