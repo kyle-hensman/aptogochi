@@ -4,10 +4,6 @@
   },
   "targets": {},
   "etags": {
-    "aptogotchi": {
-      "extensionInstances": {
-        "moralis-streams": "1b3894d5a1f2afe16ed7839304114e9cac082361d7ee5c7f5aa58f48d912602a"
-      }
-    }
+    "aptogotchi": {}
   }
 }

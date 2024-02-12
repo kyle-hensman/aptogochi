@@ -5,7 +5,7 @@ import { useTypingEffect } from '@/utils/useTypingEffect';
 
 import { ShufflePetImage } from '@/app/home/Pet/ShufflePetImage';
 import { DEFAULT_PET, PetParts } from '@/app/home/Pet';
-import { Leaderboard } from './Leaderboard';
+import { Leaderboard } from '../leaderboard/Leaderboard';
 
 export function NotConnected() {
   const [petParts, setPetParts] = useState<PetParts>(DEFAULT_PET.parts);

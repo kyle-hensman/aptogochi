@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { PropsWithChildren, SetStateAction, useState } from 'react';
 
-import { Leaderboard } from '../home/Leaderboard';
+import { Leaderboard } from './Leaderboard';
 import Link from 'next/link';
 
 const FixedSizeWrapper = ({ children }: PropsWithChildren) => {

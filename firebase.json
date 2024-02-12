@@ -1,13 +1,6 @@
 {
   "hosting": {
     "public": "out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  },
-  "extensions": {
-    "moralis-streams": "moralis/moralis-streams@0.1.16"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
